@@ -9,10 +9,15 @@ import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
 
+import java.util.ArrayList;
+
 public class Discs {
 
     @Entrypoint.Namespace
     public static Namespace MOD_ID = Null.get();
+
+    public static ArrayList<Item> dungeonDiscSpawnList = new ArrayList<>();
+    public static ArrayList<Item> creeperDiscSpawnList = new ArrayList<>();
 
     public static Item[] items;
     public static Item blocks_Disc;
@@ -66,6 +71,43 @@ public class Discs {
             Discs.pigstep_Disc,
             Discs.calm4_Disc,
         };
+
+        dungeonDiscSpawnList.add(Item.RECORD_THIRTEEN);
+        dungeonDiscSpawnList.add(Item.RECORD_CAT);
+        dungeonDiscSpawnList.add(Discs.blocks_Disc);
+        dungeonDiscSpawnList.add(Discs.chirp_Disc);
+        dungeonDiscSpawnList.add(Discs.far_Disc);
+        dungeonDiscSpawnList.add(Discs.mall_Disc);
+        dungeonDiscSpawnList.add(Discs.mellohi_Disc);
+        dungeonDiscSpawnList.add(Discs.stal_Disc);
+        dungeonDiscSpawnList.add(Discs.strad_Disc);
+        dungeonDiscSpawnList.add(Discs.ward_Disc);
+        dungeonDiscSpawnList.add(Discs.eleven_Disc);
+        dungeonDiscSpawnList.add(Discs.wait_Disc);
+        dungeonDiscSpawnList.add(Discs.otherside_Disc);
+
+        creeperDiscSpawnList.add(Item.RECORD_THIRTEEN);
+        creeperDiscSpawnList.add(Item.RECORD_CAT);
+        creeperDiscSpawnList.add(Discs.blocks_Disc);
+        creeperDiscSpawnList.add(Discs.chirp_Disc);
+        creeperDiscSpawnList.add(Discs.far_Disc);
+        creeperDiscSpawnList.add(Discs.mall_Disc);
+        creeperDiscSpawnList.add(Discs.mellohi_Disc);
+        creeperDiscSpawnList.add(Discs.stal_Disc);
+        creeperDiscSpawnList.add(Discs.strad_Disc);
+        creeperDiscSpawnList.add(Discs.ward_Disc);
+        creeperDiscSpawnList.add(Discs.eleven_Disc);
+        creeperDiscSpawnList.add(Discs.wait_Disc);
+        creeperDiscSpawnList.add(Discs.otherside_Disc);
+
+        if (!Config.config.disableDungeonAndCreeperPigstepSpawn) {
+            dungeonDiscSpawnList.add(Discs.pigstep_Disc);
+            creeperDiscSpawnList.add(Discs.pigstep_Disc);
+        }
+
+        if (Config.config.addCalm4MusicDisc) {
+            dungeonDiscSpawnList.add(Discs.calm4_Disc);
+            creeperDiscSpawnList.add(Discs.calm4_Disc);
+        }
     }
 }
-

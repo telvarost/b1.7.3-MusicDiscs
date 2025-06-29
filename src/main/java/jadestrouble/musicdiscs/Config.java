@@ -11,6 +11,7 @@ public class Config {
     public static class ConfigFields {
         @ConfigEntry(
                 name = "Add Calm4 (Magnetic Circuit) Music Disc",
+                description = "Restart required for changes to take effect",
                 multiplayerSynced = true
         )
         public Boolean addCalm4MusicDisc = true;
@@ -29,19 +30,26 @@ public class Config {
         public Float chanceGhastsDropPigstep = 0.056f;
 
         @ConfigEntry(
+                name = "Disable Dungeon/Creeper Pigstep Spawn",
+                description = "Restart required for changes to take effect",
+                multiplayerSynced = true
+        )
+        public Boolean disableDungeonAndCreeperPigstepSpawn = true;
+
+        @ConfigEntry(
                 name = "Disable Modern Music Disc Tooltips"
         )
         public Boolean disableModernMusicDiscTooltips = false;
 
         @ConfigEntry(
-                name = "Replace Creeper/Skeleton Discs",
-                description = "If skeleton kills creeper get random disc",
+                name = "Replace Creeper/Skeleton Music Discs",
+                description = "If skeleton kills creeper get a random disc",
                 multiplayerSynced = true
         )
         public Boolean replaceDiscsOnSkeletonKillCreeper = true;
 
         @ConfigEntry(
-                name = "Replace Creeper/Skeleton Discs",
+                name = "Replace Dungeon Music Discs",
                 description = "Dungeons spawn with random music discs",
                 multiplayerSynced = true
         )

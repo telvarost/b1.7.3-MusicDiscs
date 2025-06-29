@@ -28,11 +28,7 @@ abstract public class CreeperEntityMixin extends MonsterEntity {
     )
     public ItemEntity method_1390(CreeperEntity instance, int id, int count, Operation<ItemEntity> original) {
         if (Config.config.replaceDiscsOnSkeletonKillCreeper) {
-            if (Config.config.addCalm4MusicDisc) {
-                return instance.dropItem(new ItemStack(Discs.items[random.nextInt(Discs.items.length)]), 1);
-            } else {
-                return instance.dropItem(new ItemStack(Discs.items[random.nextInt(Discs.items.length - 1)]), 1);
-            }
+            return instance.dropItem(new ItemStack(Discs.creeperDiscSpawnList.get(random.nextInt(Discs.creeperDiscSpawnList.size())), 1), 0.0F);
         } else {
             return original.call(instance, id, count);
         }

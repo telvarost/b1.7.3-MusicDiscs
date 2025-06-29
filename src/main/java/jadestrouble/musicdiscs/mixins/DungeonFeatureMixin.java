@@ -23,17 +23,16 @@ public class DungeonFeatureMixin {
             at = {@At("RETURN")},
             cancellable = true
     )
-    private void replaceDisc(Random rand, CallbackInfoReturnable<ItemStack> cir) {
-        ItemStack i = cir.getReturnValue();
+    private void replaceDisc(Random random, CallbackInfoReturnable<ItemStack> cir) {
+        ItemStack itemStack = cir.getReturnValue();
+
         if (Config.config.replaceDiscsInDungeonChests) {
-            if (i == null)
+            if (itemStack == null) {
                 return;
+            }
+
             if (cir.getReturnValue().getItem() instanceof MusicDiscItem) {
-                if (Config.config.addCalm4MusicDisc) {
-                    cir.setReturnValue(new ItemStack(Discs.items[rand.nextInt(Discs.items.length)], 1));
-                } else {
-                    cir.setReturnValue(new ItemStack(Discs.items[rand.nextInt(Discs.items.length - 1)], 1));
-                }
+                cir.setReturnValue(new ItemStack(Discs.dungeonDiscSpawnList.get(random.nextInt(Discs.dungeonDiscSpawnList.size())), 1));
             }
         }
     }
