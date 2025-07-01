@@ -30,11 +30,11 @@ public class Config {
         public Float chanceGhastsDropPigstep = 0.056f;
 
         @ConfigEntry(
-                name = "Disable Dungeon/Creeper Pigstep Spawn",
+                name = "Enable Dungeon Pigstep If Replacing Discs",
                 description = "Restart required for changes to take effect",
                 multiplayerSynced = true
         )
-        public Boolean disableDungeonAndCreeperPigstepSpawn = true;
+        public Boolean enableDungeonPigstepSpawnIfReplacingDungeonDiscs = false;
 
         @ConfigEntry(
                 name = "Disable Modern Music Disc Tooltips"

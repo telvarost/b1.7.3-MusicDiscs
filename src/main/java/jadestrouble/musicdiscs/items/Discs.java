@@ -100,9 +100,8 @@ public class Discs {
         creeperDiscSpawnList.add(Discs.wait_Disc);
         creeperDiscSpawnList.add(Discs.otherside_Disc);
 
-        if (!Config.config.disableDungeonAndCreeperPigstepSpawn) {
+        if (Config.config.enableDungeonPigstepSpawnIfReplacingDungeonDiscs) {
             dungeonDiscSpawnList.add(Discs.pigstep_Disc);
-            creeperDiscSpawnList.add(Discs.pigstep_Disc);
         }
 
         if (Config.config.addCalm4MusicDisc) {
