@@ -47,7 +47,7 @@ public class Discs {
         eleven_Disc = (new NewDiscs(Identifier.of(MOD_ID, "eleven_Disc"), "musicdiscs:eleven", "C418 - 11")).setTranslationKey(MOD_ID, "Disc");
         wait_Disc = (new NewDiscs(Identifier.of(MOD_ID, "wait_Disc"), "musicdiscs:wait", "C418 - wait")).setTranslationKey(MOD_ID, "Disc");
         otherside_Disc = (new NewDiscs(Identifier.of(MOD_ID, "otherside_Disc"), "musicdiscs:otherside", "Lena Raine - otherside")).setTranslationKey(MOD_ID, "Disc");
-        pigstep_Disc = (new NewDiscs(Identifier.of(MOD_ID, "pigstep_Disc"), "musicdiscs:pigstep", "Lena Raine - Pigstep")).setTranslationKey(MOD_ID, "Disc");
+        pigstep_Disc = (new NewDiscs(Identifier.of(MOD_ID, "pigstep_Disc"), "musicdiscs:pigstep", "Lena Raine - pigstep")).setTranslationKey(MOD_ID, "Disc");
         if (Config.config.calm4DisplaysMagneticAsDiscName) {
             calm4_Disc = (new NewDiscs(Identifier.of(MOD_ID, "calm4_Disc"), "musicdiscs:calm4", "Notch - magnetic")).setTranslationKey(MOD_ID, "Disc");
         } else {
