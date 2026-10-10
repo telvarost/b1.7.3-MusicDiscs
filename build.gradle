@@ -1,7 +1,7 @@
 plugins {
 	id 'maven-publish'
-	id 'fabric-loom' version '1.16.2'
-	id 'babric-loom-extension' version '1.15.3'
+	id 'fabric-loom' version '1.17.12'
+	id 'babric-loom-extension' version '1.16.1'
 	id "com.modrinth.minotaur" version "2.+"
 }
 
@@ -171,14 +171,19 @@ dependencies {
 	}
 
 	if (project.hasProperty("unitweaks_version")) {
-		// Runtime Only
-		modRuntimeOnly("maven.modrinth:unitweaks:${project.unitweaks_version}-b1.7.3") {
+		modImplementation("maven.modrinth:unitweaks:${project.unitweaks_version}-b1.7.3") {
 			transitive = false
 		}
 	}
 
 	if (project.hasProperty("unitweakstelsaddons_version")) {
 		modImplementation("maven.modrinth:unitweakstelsaddons-stationapi:${project.unitweakstelsaddons_version}") {
+			transitive false
+		}
+	}
+
+	if (project.hasProperty("betterf3_version")) {
+		modImplementation("maven.modrinth:betterf3-stationapi:${project.betterf3_version}") {
 			transitive false
 		}
 	}
@@ -203,6 +208,12 @@ dependencies {
 
 	if (project.hasProperty("spookysquashlands_version")) {
 		modImplementation("maven.modrinth:spooky-squash-lands:${project.spookysquashlands_version}") {
+			transitive false
+		}
+	}
+
+	if (project.hasProperty("crates_version")) {
+		modImplementation("maven.modrinth:crate:${project.crates_version}") {
 			transitive false
 		}
 	}
