@@ -20,10 +20,10 @@ public class MusicDiscItemMixin extends Item implements CustomTooltipProvider {
 
     @Override
     public String[] getTooltip(ItemStack itemStack, String originalTooltip) {
-        if (Config.config.disableModernMusicDiscTooltips) {
-            return new String[]{originalTooltip};
-        } else {
+        if (Config.config.enableModernMusicDiscTooltips) {
             return new String[]{"§b" + originalTooltip, "§7C418 - " + sound};
+        } else {
+            return new String[]{originalTooltip};
         }
     }
 }

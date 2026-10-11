@@ -1,6 +1,6 @@
 package jadestrouble.musicdiscs.mixins;
 
-import jadestrouble.musicdiscs.items.NewDiscs;
+import jadestrouble.musicdiscs.items.NewDisc;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -19,6 +20,7 @@ public class WorldRendererMixin {
 
     @Shadow private Minecraft client;
 
+    @Unique
     public void musicDiscs_playStreaming(String stream, int x, int y, int z, String jukeboxMessage) {
         if (stream != null) {
             this.client.inGameHud.setRecordPlayingOverlay(jukeboxMessage);
@@ -36,9 +38,9 @@ public class WorldRendererMixin {
             ),
             cancellable = true
     )
-    public void worldEvent(PlayerEntity player, int event, int x, int y, int z, int data, CallbackInfo ci) {
-        if (Item.ITEMS[data] instanceof NewDiscs) {
-            musicDiscs_playStreaming(((NewDiscs) Item.ITEMS[data]).sound, x, y, z, ((NewDiscs) Item.ITEMS[data]).jukeboxMessage);
+    public void musicDiscs_worldEvent(PlayerEntity player, int event, int x, int y, int z, int data, CallbackInfo ci) {
+        if (Item.ITEMS[data] instanceof NewDisc) {
+            musicDiscs_playStreaming(((NewDisc) Item.ITEMS[data]).sound, x, y, z, ((NewDisc) Item.ITEMS[data]).jukeboxMessage);
             ci.cancel();
         }
     }

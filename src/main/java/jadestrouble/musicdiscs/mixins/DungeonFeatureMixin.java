@@ -23,10 +23,10 @@ public class DungeonFeatureMixin {
             at = {@At("RETURN")},
             cancellable = true
     )
-    private void replaceDisc(Random random, CallbackInfoReturnable<ItemStack> cir) {
+    private void musicDiscs_getRandomChestItem(Random random, CallbackInfoReturnable<ItemStack> cir) {
         ItemStack itemStack = cir.getReturnValue();
 
-        if (Config.config.replaceDiscsInDungeonChests) {
+        if (Config.config.enableDungeonChestDiscList) {
             if (itemStack == null) {
                 return;
             }
